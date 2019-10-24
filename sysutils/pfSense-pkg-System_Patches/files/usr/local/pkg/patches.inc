@@ -238,7 +238,7 @@ function patch_descr($id) {
 	$a_patches = &$config['installedpackages']['patches']['item'];
 	$descr = " (" . gettext("ID") . ": {$a_patches[$id]['uniqid']}");
 	if (isset($a_patches[$id]['descr'])) {
-		$descr .= ", " . gettext("DESCR") . ": {$a_patches[$id]['descr']}");
+		$descr .= ", " . gettext("DESCR") . ": {$a_patches[$id]['descr']}";
 	}
 	$descr .= ")";
 	return $descr;
