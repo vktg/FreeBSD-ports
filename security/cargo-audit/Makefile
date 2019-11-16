@@ -6,6 +6,10 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.3
 =======
 DISTVERSION=	0.10.0
+<<<<<<< HEAD
+>>>>>>> upstream/master
+=======
+PORTREVISION=	1
 >>>>>>> upstream/master
 CATEGORIES=	security
 

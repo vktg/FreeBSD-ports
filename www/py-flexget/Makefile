@@ -3,10 +3,14 @@
 
 PORTNAME=	flexget
 <<<<<<< HEAD
+<<<<<<< HEAD
 PORTVERSION=	2.21.22
 PORTREVISION=	1
 =======
 PORTVERSION=	2.21.31
+>>>>>>> upstream/master
+=======
+PORTVERSION=	2.21.35
 >>>>>>> upstream/master
 PORTEPOCH=	1
 CATEGORIES=	www python

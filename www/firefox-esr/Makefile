@@ -4,8 +4,12 @@
 PORTNAME=	firefox
 DISTVERSION=	68.2.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 PORTREVISION=	2
+>>>>>>> upstream/master
+=======
+PORTREVISION=	5
 >>>>>>> upstream/master
 PORTEPOCH=	1
 CATEGORIES=	www
@@ -35,7 +39,7 @@ BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
 USE_GECKO=	gecko
 CPE_PRODUCT=	${PORTNAME}_esr
 CONFLICTS_INSTALL=	firefox
-USE_MOZILLA=	-hunspell -vpx
+USE_MOZILLA=	-vpx
 
 USES=		tar:xz
 

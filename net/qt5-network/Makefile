@@ -2,10 +2,13 @@
 
 PORTNAME=	network
 DISTVERSION=	${QT5_VERSION}
+<<<<<<< HEAD
 PORTREVISION=	1
 <<<<<<< HEAD
 CATEGORIES=	net ipv6
 =======
+=======
+>>>>>>> upstream/master
 CATEGORIES=	net
 >>>>>>> upstream/master
 PKGNAMEPREFIX=	qt5-

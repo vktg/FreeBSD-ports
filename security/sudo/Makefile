@@ -3,9 +3,13 @@
 
 PORTNAME=	sudo
 <<<<<<< HEAD
+<<<<<<< HEAD
 PORTVERSION=	1.8.28
 =======
 PORTVERSION=	1.8.28p1
+>>>>>>> upstream/master
+=======
+PORTVERSION=	1.8.29
 >>>>>>> upstream/master
 CATEGORIES=	security
 MASTER_SITES=	SUDO

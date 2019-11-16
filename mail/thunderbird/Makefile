@@ -2,11 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
+<<<<<<< HEAD
 DISTVERSION=	68.2.0
 <<<<<<< HEAD
 CATEGORIES=	mail news net-im ipv6
 =======
 PORTREVISION=	1
+=======
+DISTVERSION=	68.2.2
+PORTREVISION=	2
+>>>>>>> upstream/master
 CATEGORIES=	mail news net-im
 >>>>>>> upstream/master
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
@@ -33,7 +38,7 @@ BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
-USE_MOZILLA=	-hunspell -vpx
+USE_MOZILLA=	-vpx
 
 USES=		tar:xz
 
@@ -59,7 +64,7 @@ MOZ_OPTIONS+=	--disable-calendar
 .endif
 
 post-extract:
-	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|;s|@MOZILLA@|${MOZILLA}|' \
+	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON:R}|;s|@MOZILLA@|${MOZILLA}|' \
 		<${FILESDIR}/thunderbird.desktop.in >${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop
 
 post-patch:

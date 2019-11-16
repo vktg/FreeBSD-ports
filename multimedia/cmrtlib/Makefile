@@ -3,9 +3,13 @@
 PORTNAME=	cmrtlib
 DISTVERSIONPREFIX=	intel-media-
 <<<<<<< HEAD
+<<<<<<< HEAD
 DISTVERSION=	19.3.0
 =======
 DISTVERSION=	19.4.pre1
+>>>>>>> upstream/master
+=======
+DISTVERSION=	19.4.pre2
 >>>>>>> upstream/master
 CATEGORIES=	multimedia
 
