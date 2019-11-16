@@ -3,8 +3,12 @@
 
 PORTNAME=	firefox
 DISTVERSION=	68.2.0
+<<<<<<< HEAD
+=======
+PORTREVISION=	2
+>>>>>>> upstream/master
 PORTEPOCH=	1
-CATEGORIES=	www ipv6
+CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build1/source
 PKGNAMESUFFIX=	-esr

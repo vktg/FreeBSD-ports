@@ -2,8 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
+<<<<<<< HEAD
 PORTVERSION=	2.21.22
 PORTREVISION=	1
+=======
+PORTVERSION=	2.21.31
+>>>>>>> upstream/master
 PORTEPOCH=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

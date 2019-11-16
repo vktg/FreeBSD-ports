@@ -1,7 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	hcloud
+<<<<<<< HEAD
 DISTVERSION=	1.6.1
+=======
+DISTVERSION=	1.6.2
+>>>>>>> upstream/master
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

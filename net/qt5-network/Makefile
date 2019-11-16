@@ -3,7 +3,11 @@
 PORTNAME=	network
 DISTVERSION=	${QT5_VERSION}
 PORTREVISION=	1
+<<<<<<< HEAD
 CATEGORIES=	net ipv6
+=======
+CATEGORIES=	net
+>>>>>>> upstream/master
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org

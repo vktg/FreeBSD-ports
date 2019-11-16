@@ -2,8 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	haproxy
+<<<<<<< HEAD
 PORTVERSION=	1.7.11
 PORTREVISION=	1
+=======
+PORTVERSION=	1.7.12
+>>>>>>> upstream/master
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/1.7/src/
 PKGNAMESUFFIX=	17
