@@ -3,6 +3,10 @@
 
 PORTNAME=	pam_google_authenticator
 PORTVERSION=	1.08
+<<<<<<< HEAD
+=======
+PORTREVISION=	1
+>>>>>>> upstream/master
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -19,14 +23,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	google-authenticator-libpam
 
+INSTALL_TARGET=	install-strip
+
 OPTIONS_DEFINE=		QRENCODE
 OPTIONS_DEFAULT=	QRENCODE
-QRENCODE_DESC=		Allow creation of QR-codes
 
+QRENCODE_DESC=		Allow creation of QR-codes
 QRENCODE_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 
 post-patch:
-	@${REINPLACE_CMD} -e 's;/security;;'	\
-		${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's;/security;;' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

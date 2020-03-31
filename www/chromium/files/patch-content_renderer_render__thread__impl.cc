@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 --- content/renderer/render_thread_impl.cc.orig	2019-12-16 21:51:26 UTC
+=======
+--- content/renderer/render_thread_impl.cc.orig	2020-03-03 18:53:54 UTC
+>>>>>>> upstream/master
 +++ content/renderer/render_thread_impl.cc
-@@ -185,12 +185,21 @@
+@@ -173,12 +173,21 @@
  #include "mojo/public/cpp/bindings/message_dumper.h"
  #endif
  
@@ -22,7 +26,11 @@
  using base::ThreadRestrictions;
  using blink::WebDocument;
  using blink::WebFrame;
+<<<<<<< HEAD
 @@ -921,7 +930,7 @@ void RenderThreadImpl::Init() {
+=======
+@@ -735,7 +744,7 @@ void RenderThreadImpl::Init() {
+>>>>>>> upstream/master
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -31,16 +39,24 @@
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
+<<<<<<< HEAD
 @@ -951,7 +960,7 @@ void RenderThreadImpl::Init() {
+=======
+@@ -758,7 +767,7 @@ void RenderThreadImpl::Init() {
+>>>>>>> upstream/master
    base::DiscardableMemoryAllocator::SetInstance(
-       discardable_shared_memory_manager_.get());
+       discardable_memory_allocator_.get());
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    if (base::FeatureList::IsEnabled(
            blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
      render_message_filter()->SetThreadPriority(
+<<<<<<< HEAD
 @@ -1327,7 +1336,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+=======
+@@ -1128,7 +1137,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+>>>>>>> upstream/master
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames);
  #else
        cmd_line->HasSwitch(switches::kEnableGpuMemoryBufferVideoFrames);

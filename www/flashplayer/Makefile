@@ -2,7 +2,11 @@
 
 PORTNAME=	flashplayer
 PORTVERSION=	32.0
+<<<<<<< HEAD
 PORTREVISION=	14
+=======
+PORTREVISION=	15
+>>>>>>> upstream/master
 CATEGORIES=	www multimedia
 DISTFILES=
 

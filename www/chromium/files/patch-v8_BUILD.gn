@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 --- v8/BUILD.gn.orig	2019-12-16 21:56:22 UTC
 +++ v8/BUILD.gn
 @@ -3639,7 +3639,7 @@ v8_component("v8_libbase") {
+=======
+--- v8/BUILD.gn.orig	2020-03-03 18:55:34 UTC
++++ v8/BUILD.gn
+@@ -3561,7 +3561,7 @@ v8_component("v8_libbase") {
+>>>>>>> upstream/master
      }
    }
  
@@ -9,7 +15,11 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
+<<<<<<< HEAD
 @@ -3659,6 +3659,12 @@ v8_component("v8_libbase") {
+=======
+@@ -3581,6 +3581,12 @@ v8_component("v8_libbase") {
+>>>>>>> upstream/master
        "dl",
        "rt",
      ]
@@ -22,9 +32,14 @@
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
+<<<<<<< HEAD
 @@ -3916,6 +3922,7 @@ if (current_toolchain == v8_snapshot_toolchain) {
        "src/snapshot/embedded/platform-embedded-file-writer-win.h",
+=======
+@@ -3840,6 +3846,7 @@ if (current_toolchain == v8_snapshot_toolchain) {
+>>>>>>> upstream/master
        "src/snapshot/mksnapshot.cc",
+       "src/snapshot/snapshot-empty.cc",
      ]
 +    libs = ["execinfo"]
  

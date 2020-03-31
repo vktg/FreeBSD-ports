@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 --- third_party/swiftshader/BUILD.gn.orig	2019-12-16 21:56:18 UTC
+=======
+--- third_party/swiftshader/BUILD.gn.orig	2020-03-03 18:55:29 UTC
+>>>>>>> upstream/master
 +++ third_party/swiftshader/BUILD.gn
 @@ -142,9 +142,6 @@ config("swiftshader_config") {
        ldflags = [ "-Wl,--gc-sections" ]

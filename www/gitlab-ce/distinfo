@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 TIMESTAMP = 1581628674
 SHA256 (gitlab-org-gitlab-foss-61654d25b205e5c720de4d82402ff83fd8f18849_GL0.tar.gz) = 1d91bcfdaf0dfd89eaa2dac215850063aa740d0ca80cdd3341983adf2fefd8c7
 SIZE (gitlab-org-gitlab-foss-61654d25b205e5c720de4d82402ff83fd8f18849_GL0.tar.gz) = 86836659
+=======
+TIMESTAMP = 1584567707
+SHA256 (gitlab-org-gitlab-foss-b679f55a1991eaf5533e6a82335ca83fc8cf3753_GL0.tar.gz) = 7d5149589a89c031d9ac37a7d7a7dbd7db2c3cba2713231ccab1f02a637b850e
+SIZE (gitlab-org-gitlab-foss-b679f55a1991eaf5533e6a82335ca83fc8cf3753_GL0.tar.gz) = 88762598
+>>>>>>> upstream/master

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 --- content/gpu/gpu_main.cc.orig	2019-12-16 21:51:26 UTC
+=======
+--- content/gpu/gpu_main.cc.orig	2020-03-03 18:53:54 UTC
+>>>>>>> upstream/master
 +++ content/gpu/gpu_main.cc
 @@ -82,7 +82,7 @@
  #include "ui/gfx/x/x11_switches.h"    // nogncheck
@@ -9,7 +13,11 @@
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "content/public/common/sandbox_init.h"
  #include "services/service_manager/sandbox/linux/sandbox_linux.h"
+<<<<<<< HEAD
 @@ -103,7 +103,7 @@ namespace content {
+=======
+@@ -106,7 +106,7 @@ namespace content {
+>>>>>>> upstream/master
  
  namespace {
  
@@ -18,7 +26,11 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
+<<<<<<< HEAD
 @@ -164,7 +164,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+=======
+@@ -174,7 +174,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+>>>>>>> upstream/master
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -27,7 +39,11 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
+<<<<<<< HEAD
 @@ -268,7 +268,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+=======
+@@ -298,7 +298,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+>>>>>>> upstream/master
      main_thread_task_executor =
          std::make_unique<base::SingleThreadTaskExecutor>(
              gpu_preferences.message_pump_type);
@@ -36,7 +52,11 @@
  #error "Unsupported Linux platform."
  #elif defined(OS_MACOSX)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
+<<<<<<< HEAD
 @@ -372,7 +372,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+=======
+@@ -409,7 +409,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+>>>>>>> upstream/master
  
  namespace {
  
@@ -45,7 +65,11 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
+<<<<<<< HEAD
 @@ -407,7 +407,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+=======
+@@ -444,7 +444,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+>>>>>>> upstream/master
  
    return res;
  }

@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 --- media/mojo/clients/mojo_video_encode_accelerator.cc.orig	2019-12-16 21:51:27 UTC
+=======
+--- media/mojo/clients/mojo_video_encode_accelerator.cc.orig	2020-03-03 18:53:55 UTC
+>>>>>>> upstream/master
 +++ media/mojo/clients/mojo_video_encode_accelerator.cc
-@@ -124,7 +124,7 @@ void MojoVideoEncodeAccelerator::Encode(scoped_refptr<
+@@ -125,7 +125,7 @@ void MojoVideoEncodeAccelerator::Encode(scoped_refptr<
              frame->layout().num_planes());
    DCHECK(vea_.is_bound());
  

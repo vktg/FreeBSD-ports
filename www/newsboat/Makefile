@@ -3,7 +3,11 @@
 
 PORTNAME=	newsboat
 PORTVERSION=	2.18
+<<<<<<< HEAD
 PORTREVISION=	1
+=======
+PORTREVISION=	4
+>>>>>>> upstream/master
 CATEGORIES=	www
 MASTER_SITES=	https://newsboat.org/releases/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

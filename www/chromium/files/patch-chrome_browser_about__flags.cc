@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 --- chrome/browser/about_flags.cc.orig	2019-12-16 21:51:23 UTC
 +++ chrome/browser/about_flags.cc
 @@ -164,7 +164,7 @@
+=======
+--- chrome/browser/about_flags.cc.orig	2020-03-03 18:53:51 UTC
++++ chrome/browser/about_flags.cc
+@@ -166,7 +166,7 @@
+>>>>>>> upstream/master
  #include "ui/gl/gl_switches.h"
  #include "ui/native_theme/native_theme_features.h"
  
@@ -9,6 +15,7 @@
  #include "base/allocator/buildflags.h"
  #endif
  
+<<<<<<< HEAD
 @@ -715,7 +715,7 @@ const FeatureEntry::FeatureVariation
           nullptr}};
  #endif  // OS_ANDROID
@@ -28,6 +35,9 @@
  const FeatureEntry::Choice kMemlogModeChoices[] = {
      {flags_ui::kGenericExperimentChoiceDisabled, "", ""},
 @@ -815,7 +815,7 @@ const FeatureEntry::Choice kMemlogSamplingRateChoices[
+=======
+@@ -804,7 +804,7 @@ const FeatureEntry::Choice kMemlogSamplingRateChoices[
+>>>>>>> upstream/master
       heap_profiling::kMemlogSamplingRate5MB},
  };
  
@@ -36,6 +46,7 @@
  const FeatureEntry::FeatureParam kOmniboxDocumentProviderServerScoring[] = {
      {"DocumentUseServerScore", "true"},
      {"DocumentUseClientScore", "false"},
+<<<<<<< HEAD
 @@ -853,7 +853,7 @@ const FeatureEntry::FeatureVariation kOmniboxDocumentP
       base::size(kOmniboxDocumentProviderClientScoring), nullptr},
      {"server and client scores", kOmniboxDocumentProviderServerAndClientScoring,
@@ -46,12 +57,16 @@
  #ifdef OS_ANDROID
  const FeatureEntry::FeatureParam kOmniboxNTPZPSLocal[] = {
 @@ -967,7 +967,7 @@ const FeatureEntry::FeatureVariation kOmniboxMaxURLMat
+=======
+@@ -956,7 +956,7 @@ const FeatureEntry::FeatureVariation kOmniboxMaxURLMat
+>>>>>>> upstream/master
      {"6 matches", kOmniboxMaxURLMatches6, base::size(kOmniboxMaxURLMatches6),
       nullptr}};
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || \
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD) || \
      defined(OS_CHROMEOS)
+<<<<<<< HEAD
  const FeatureEntry::FeatureParam kTranslateBubbleUIButton[] = {
      {language::kTranslateUIBubbleKey, language::kTranslateUIBubbleButtonValue}};
 @@ -983,7 +983,7 @@ const FeatureEntry::FeatureVariation kTranslateBubbleU
@@ -64,6 +79,11 @@
  const FeatureEntry::FeatureParam kMarkHttpAsDangerous[] = {
      {security_state::features::kMarkHttpAsFeatureParameterName,
 @@ -1913,13 +1913,13 @@ const FeatureEntry kFeatureEntries[] = {
+=======
+ const FeatureEntry::FeatureParam kTranslateBubbleUITab[] = {
+     {language::kTranslateUIBubbleKey, language::kTranslateUIBubbleTabValue}};
+@@ -1981,13 +1981,13 @@ const FeatureEntry kFeatureEntries[] = {
+>>>>>>> upstream/master
       flag_descriptions::kCloudPrintXpsDescription, kOsWin,
       SINGLE_VALUE_TYPE(switches::kEnableCloudPrintXps)},
  #endif  // OS_WIN
@@ -79,7 +99,11 @@
      {"enable-webgl-draft-extensions",
       flag_descriptions::kWebglDraftExtensionsName,
       flag_descriptions::kWebglDraftExtensionsDescription, kOsAll,
+<<<<<<< HEAD
 @@ -1971,14 +1971,14 @@ const FeatureEntry kFeatureEntries[] = {
+=======
+@@ -2031,14 +2031,14 @@ const FeatureEntry kFeatureEntries[] = {
+>>>>>>> upstream/master
                                      "OverrideTranslateTriggerInIndia")},
  #endif  // OS_ANDROID
  
@@ -96,6 +120,7 @@
  
  #if BUILDFLAG(ENABLE_NATIVE_NOTIFICATIONS) && !defined(OS_CHROMEOS)
      {"enable-native-notifications",
+<<<<<<< HEAD
 @@ -2044,7 +2044,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kCrostiniBackupDescription, kOsCrOS,
       FEATURE_VALUE_TYPE(chromeos::features::kCrostiniBackup)},
@@ -106,6 +131,9 @@
       flag_descriptions::kTerminalSystemAppDescription, kOsCrOS | kOsLinux,
       FEATURE_VALUE_TYPE(features::kTerminalSystemApp)},
 @@ -2053,7 +2053,7 @@ const FeatureEntry kFeatureEntries[] = {
+=======
+@@ -2119,7 +2119,7 @@ const FeatureEntry kFeatureEntries[] = {
+>>>>>>> upstream/master
       flag_descriptions::kDynamicTcmallocDescription, kOsCrOS | kOsLinux,
       FEATURE_VALUE_TYPE(performance_manager::features::kDynamicTcmallocTuning)},
  #endif  // BUILDFLAG(USE_TCMALLOC)
@@ -114,7 +142,11 @@
  #if defined(OS_ANDROID)
      {"enable-credit-card-assist", flag_descriptions::kCreditCardAssistName,
       flag_descriptions::kCreditCardAssistDescription, kOsAndroid,
+<<<<<<< HEAD
 @@ -2131,7 +2131,7 @@ const FeatureEntry kFeatureEntries[] = {
+=======
+@@ -2197,7 +2197,7 @@ const FeatureEntry kFeatureEntries[] = {
+>>>>>>> upstream/master
       flag_descriptions::kEnableLitePageServerPreviewsDescription, kOsAndroid,
       FEATURE_VALUE_TYPE(previews::features::kLitePageServerPreviews)},
  #endif  // OS_ANDROID
@@ -123,16 +155,26 @@
      {"enable-save-data", flag_descriptions::kEnableSaveDataName,
       flag_descriptions::kEnableSaveDataDescription, kOsCrOS,
       SINGLE_VALUE_TYPE(
+<<<<<<< HEAD
 @@ -2810,7 +2810,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kOmniboxLocalEntitySuggestionsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(omnibox::kOmniboxLocalEntitySuggestions)},
+=======
+@@ -2858,7 +2858,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kOmniboxExperimentalSuggestScoringDescription, kOsAll,
+      FEATURE_VALUE_TYPE(omnibox::kOmniboxExperimentalSuggestScoring)},
+>>>>>>> upstream/master
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
+<<<<<<< HEAD
 @@ -2850,7 +2850,7 @@ const FeatureEntry kFeatureEntries[] = {
+=======
+@@ -2903,7 +2903,7 @@ const FeatureEntry kFeatureEntries[] = {
+>>>>>>> upstream/master
       flag_descriptions::kOmniboxAutocompleteTitlesName,
       flag_descriptions::kOmniboxAutocompleteTitlesDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(omnibox::kAutocompleteTitles)},
@@ -141,7 +183,11 @@
  
      {"enable-speculative-service-worker-start-on-query-input",
       flag_descriptions::kSpeculativeServiceWorkerStartOnQueryInputName,
+<<<<<<< HEAD
 @@ -3084,13 +3084,13 @@ const FeatureEntry kFeatureEntries[] = {
+=======
+@@ -3136,13 +3136,13 @@ const FeatureEntry kFeatureEntries[] = {
+>>>>>>> upstream/master
       flag_descriptions::kClickToOpenPDFDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
  
@@ -157,7 +203,11 @@
  
  #if !defined(OS_ANDROID)
      {"chrome-colors", flag_descriptions::kChromeColorsName,
+<<<<<<< HEAD
 @@ -3889,13 +3889,13 @@ const FeatureEntry kFeatureEntries[] = {
+=======
+@@ -3965,13 +3965,13 @@ const FeatureEntry kFeatureEntries[] = {
+>>>>>>> upstream/master
       FEATURE_VALUE_TYPE(printing::features::kEnableCustomMacPaperSizes)},
  #endif
  
@@ -173,6 +223,7 @@
          // defined(OS_CHROMEOS)
  
      {"enable-audio-focus-enforcement",
+<<<<<<< HEAD
 @@ -4269,7 +4269,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kAudioWorkletRealtimeThreadDescription, kOsAll,
       FEATURE_VALUE_TYPE(blink::features::kAudioWorkletRealtimeThread)},
@@ -192,6 +243,9 @@
  #if defined(OS_CHROMEOS)
      {"release-notes", flag_descriptions::kReleaseNotesName,
 @@ -4367,12 +4367,12 @@ const FeatureEntry kFeatureEntries[] = {
+=======
+@@ -4425,12 +4425,12 @@ const FeatureEntry kFeatureEntries[] = {
+>>>>>>> upstream/master
       flag_descriptions::kEnableSyncUSSNigoriDescription, kOsAll,
       FEATURE_VALUE_TYPE(switches::kSyncUSSNigori)},
  
@@ -206,7 +260,11 @@
  
  #if BUILDFLAG(ENABLE_SPELLCHECK) && defined(OS_WIN)
      {"win-use-native-spellchecker",
+<<<<<<< HEAD
 @@ -4385,12 +4385,12 @@ const FeatureEntry kFeatureEntries[] = {
+=======
+@@ -4450,12 +4450,12 @@ const FeatureEntry kFeatureEntries[] = {
+>>>>>>> upstream/master
       flag_descriptions::kSafetyTipDescription, kOsAll,
       FEATURE_VALUE_TYPE(security_state::features::kSafetyTipUI)},
  
@@ -221,7 +279,11 @@
  
  #if defined(OS_CHROMEOS)
      {"crostini-webui-installer", flag_descriptions::kCrostiniWebUIInstallerName,
+<<<<<<< HEAD
 @@ -4526,12 +4526,12 @@ const FeatureEntry kFeatureEntries[] = {
+=======
+@@ -4587,12 +4587,12 @@ const FeatureEntry kFeatureEntries[] = {
+>>>>>>> upstream/master
           chrome::android::kDarkenWebsitesCheckboxInThemesSetting)},
  #endif  // defined(OS_ANDROID)
  
@@ -236,6 +298,7 @@
  
      {"password-leak-detection", flag_descriptions::kPasswordLeakDetectionName,
       flag_descriptions::kPasswordLeakDetectionDescription, kOsAll,
+<<<<<<< HEAD
 @@ -4605,11 +4605,11 @@ const FeatureEntry kFeatureEntries[] = {
           content_settings::kImprovedCookieControlsForThirdPartyCookieBlocking)},
  #endif  // !defined(OS_ANDROID)
@@ -250,3 +313,5 @@
  
  #if !defined(OS_ANDROID)
      {"accessibility-internals-page-improvements",
+=======
+>>>>>>> upstream/master

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 --- third_party/angle/BUILD.gn.orig	2019-12-16 21:56:11 UTC
 +++ third_party/angle/BUILD.gn
 @@ -371,6 +371,7 @@ angle_static_library("angle_gpu_info_util") {
+=======
+--- third_party/angle/BUILD.gn.orig	2020-03-03 18:55:22 UTC
++++ third_party/angle/BUILD.gn
+@@ -389,6 +389,7 @@ angle_static_library("angle_gpu_info_util") {
+>>>>>>> upstream/master
          "X11",
          "Xi",
          "Xext",
@@ -8,7 +14,11 @@
        ]
      }
    }
+<<<<<<< HEAD
 @@ -1055,10 +1056,6 @@ foreach(is_shared_library,
+=======
+@@ -1107,10 +1108,6 @@ foreach(is_shared_library,
+>>>>>>> upstream/master
  
      if (is_linux) {
        sources += util_linux_sources

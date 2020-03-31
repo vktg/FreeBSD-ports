@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 --- chrome/common/webui_url_constants.cc.orig	2019-12-16 21:51:24 UTC
 +++ chrome/common/webui_url_constants.cc
 @@ -310,7 +310,7 @@ bool IsSystemWebUIHost(base::StringPiece host) {
+=======
+--- chrome/common/webui_url_constants.cc.orig	2020-03-03 18:53:53 UTC
++++ chrome/common/webui_url_constants.cc
+@@ -316,7 +316,7 @@ bool IsSystemWebUIHost(base::StringPiece host) {
+>>>>>>> upstream/master
  const char kChromeUICastHost[] = "cast";
  #endif
  
@@ -9,7 +15,11 @@
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  const char kChromeUIHatsHost[] = "hats";
+<<<<<<< HEAD
 @@ -321,17 +321,17 @@ const char kChromeUIHatsURL[] = "chrome://hats/";
+=======
+@@ -327,17 +327,17 @@ const char kChromeUIHatsURL[] = "chrome://hats/";
+>>>>>>> upstream/master
  const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
  #endif
  
@@ -30,7 +40,11 @@
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
  
+<<<<<<< HEAD
 @@ -591,13 +591,13 @@ const char* const kChromeHostURLs[] = {
+=======
+@@ -599,13 +599,13 @@ const char* const kChromeHostURLs[] = {
+>>>>>>> upstream/master
      kChromeUIInternetDetailDialogHost,
      kChromeUIAssistantOptInHost,
  #endif
@@ -41,8 +55,8 @@
  #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
      kChromeUILinuxProxyConfigHost,
  #endif
--#if defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
      kChromeUISandboxHost,
  #endif
  #if defined(OS_WIN)

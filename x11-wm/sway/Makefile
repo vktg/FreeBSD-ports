@@ -1,7 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	sway
+<<<<<<< HEAD
 DISTVERSION=	1.3-rc3
+=======
+DISTVERSION=	1.4
+>>>>>>> upstream/master
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
+<<<<<<< HEAD
 		wlroots>=0.9.0<0.10.0:x11-toolkits/wlroots
+=======
+		wlroots>=0.9.0<0.11.0:x11-toolkits/wlroots
+>>>>>>> upstream/master
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libpcre.so:devel/pcre \

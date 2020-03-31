@@ -6,7 +6,11 @@
 
 PORTNAME=	lsof
 DISTVERSION=	4.93.2
+<<<<<<< HEAD
 PORTREVISION=	9
+=======
+PORTREVISION=	10
+>>>>>>> upstream/master
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 

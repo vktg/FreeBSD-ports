@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 --- chrome/browser/ui/browser_command_controller.cc.orig	2019-12-16 21:51:24 UTC
+=======
+--- chrome/browser/ui/browser_command_controller.cc.orig	2020-03-03 18:53:52 UTC
+>>>>>>> upstream/master
 +++ chrome/browser/ui/browser_command_controller.cc
 @@ -81,7 +81,7 @@
  #include "chrome/browser/ui/browser_commands_chromeos.h"
@@ -27,7 +31,11 @@
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
+<<<<<<< HEAD
 @@ -945,7 +945,7 @@ void BrowserCommandController::InitCommandState() {
+=======
+@@ -951,7 +951,7 @@ void BrowserCommandController::InitCommandState() {
+>>>>>>> upstream/master
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_3, true);
  #endif

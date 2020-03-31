@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 --- ui/base/ui_base_features.h.orig	2019-12-16 21:51:33 UTC
 +++ ui/base/ui_base_features.h
 @@ -63,10 +63,10 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
+=======
+--- ui/base/ui_base_features.h.orig	2020-03-03 18:54:06 UTC
++++ ui/base/ui_base_features.h
+@@ -65,10 +65,10 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
+>>>>>>> upstream/master
  extern const base::Feature kEnableAutomaticUiAdjustmentsForTouch;
  #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
  

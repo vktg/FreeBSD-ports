@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 --- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig	2019-12-16 21:51:26 UTC
 +++ gpu/command_buffer/service/external_vk_image_gl_representation.cc
 @@ -189,7 +189,7 @@ GLuint ExternalVkImageGlRepresentation::ImportVkSemaph
+=======
+--- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig	2020-03-03 18:53:55 UTC
++++ gpu/command_buffer/service/external_vk_image_gl_representation.cc
+@@ -179,7 +179,7 @@ GLuint ExternalVkImageGLRepresentationShared::ImportVk
+>>>>>>> upstream/master
  #if defined(OS_FUCHSIA)
    NOTIMPLEMENTED_LOG_ONCE();
    return 0;
@@ -9,7 +15,11 @@
    if (handle.vk_handle_type() !=
        VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD_BIT) {
      DLOG(ERROR) << "Importing semaphore handle of unexpected type:"
+<<<<<<< HEAD
 @@ -204,7 +204,7 @@ GLuint ExternalVkImageGlRepresentation::ImportVkSemaph
+=======
+@@ -194,7 +194,7 @@ GLuint ExternalVkImageGLRepresentationShared::ImportVk
+>>>>>>> upstream/master
                                  fd.release());
  
    return gl_semaphore;

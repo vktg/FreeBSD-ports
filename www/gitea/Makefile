@@ -2,7 +2,11 @@
 
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
+<<<<<<< HEAD
 DISTVERSION=	1.11.2
+=======
+DISTVERSION=	1.11.3
+>>>>>>> upstream/master
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/go-gitea/gitea/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	gitea-src-${DISTVERSION}
@@ -28,6 +32,10 @@ GROUPS=		git
 
 OPTIONS_DEFINE=	BINDATA PAM SQLITE
 OPTIONS_DEFAULT=	PAM SQLITE
+<<<<<<< HEAD
+=======
+OPTIONS_SUB=	yes
+>>>>>>> upstream/master
 
 BINDATA_DESC=	Build a single monolithic binary, with all assets included
 PAM_DESC=	Enable support for PAM
@@ -53,11 +61,20 @@ DAEMONARGS=	-f
 
 SUB_LIST+=	DAEMONARGS="${DAEMONARGS}"
 
+<<<<<<< HEAD
+=======
+SSP_UNSAFE=	true
+>>>>>>> upstream/master
 # use sane defaults for path, overriden with actual PREFIX in start script
 EXTRA_LDFLAGS=	-X code.gitea.io/gitea/modules/setting.CustomPath=${PREFIX}/etc/gitea
 EXTRA_LDFLAGS+=	-X code.gitea.io/gitea/modules/setting.AppWorkPath=${PREFIX}/share/gitea
 # Default LDFLAGS are incompatible with build
+<<<<<<< HEAD
 MAKE_ARGS=	GOPATH=${WRKDIR} TAGS="${GO_TAGS}" LDFLAGS="${EXTRA_LDFLAGS}"
+=======
+MAKE_ENV=	LDFLAGS="${LDFLAGS} ${EXTRA_LDFLAGS}"
+MAKE_ARGS=	GOPATH=${WRKDIR} TAGS="${GO_TAGS}"
+>>>>>>> upstream/master
 ALL_TARGET=	backend
 MAKE_JOBS_UNSAFE=	yes
 

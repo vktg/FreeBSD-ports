@@ -70,7 +70,6 @@
     SUBDIR += ettercap
     SUBDIR += fastnetmon
     SUBDIR += fetchconfig
-    SUBDIR += flow-extract
     SUBDIR += flow-tools
     SUBDIR += flowd
     SUBDIR += flowviewer
@@ -174,6 +173,7 @@
     SUBDIR += net-snmp
     SUBDIR += netbox
     SUBDIR += netdata
+    SUBDIR += netdata-go
     SUBDIR += netdisco
     SUBDIR += netdisco-mibs
     SUBDIR += netdot
@@ -281,7 +281,6 @@
     SUBDIR += pandorafms_agent
     SUBDIR += pandorafms_console
     SUBDIR += pandorafms_server
-    SUBDIR += pdagent-integrations
     SUBDIR += percona-monitoring-plugins
     SUBDIR += pftabled
     SUBDIR += php72-snmp
@@ -311,7 +310,6 @@
     SUBDIR += py-napalm-logs
     SUBDIR += py-ncclient
     SUBDIR += py-nxapi-plumbing
-    SUBDIR += py-pdagent
     SUBDIR += py-prometheus-client
     SUBDIR += py-pyIOSXR
     SUBDIR += py-pyang

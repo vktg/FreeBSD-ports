@@ -2,7 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pillow
+<<<<<<< HEAD
 PORTVERSION=	6.2.2
+=======
+PORTVERSION=	7.0.0
+>>>>>>> upstream/master
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,8 +21,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 
-# Python 2.7,3.5+
-USES=		cpe python
+# Python 3.5+
+USES=		cpe python:3.5+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 

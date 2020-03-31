@@ -67,16 +67,17 @@
     SUBDIR += elixir-mongo
     SUBDIR += elixir-postgrex
     SUBDIR += elixir-timex_ecto
-    SUBDIR += emma
     SUBDIR += erlang-couchbeam
     SUBDIR += erlang-epgsql
     SUBDIR += erlang-eredis
+    SUBDIR += erlfdb
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
     SUBDIR += firebird25-client
     SUBDIR += firebird25-server
     SUBDIR += fortytwo-bdb
     SUBDIR += foundationdb
+    SUBDIR += foundationdb-devel
     SUBDIR += fpc-dblib
     SUBDIR += fpc-fpindexer
     SUBDIR += fpc-gdbm
@@ -90,7 +91,6 @@
     SUBDIR += freetds
     SUBDIR += freetds-devel
     SUBDIR += frontbase-jdbc
-    SUBDIR += gadfly
     SUBDIR += galera
     SUBDIR += galera26
     SUBDIR += gdbm
@@ -99,6 +99,7 @@
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
     SUBDIR += go-carbon
+    SUBDIR += go-pgweb
     SUBDIR += gom
     SUBDIR += gqlplus
     SUBDIR += grass7
@@ -125,9 +126,6 @@
     SUBDIR += kexi
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
-    SUBDIR += ldb
-    SUBDIR += ldb12
-    SUBDIR += ldb13
     SUBDIR += ldb14
     SUBDIR += ldb15
     SUBDIR += leo_center
@@ -189,8 +187,6 @@
     SUBDIR += mdcached
     SUBDIR += memcached
     SUBDIR += memcacheq
-    SUBDIR += metakit
-    SUBDIR += monetdb
     SUBDIR += mongodb34
     SUBDIR += mongodb34-tools
     SUBDIR += mongodb36
@@ -243,7 +239,6 @@
     SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
     SUBDIR += ocaml-sqlite3
-    SUBDIR += openark-kit
     SUBDIR += opendbviewer
     SUBDIR += opendbx
     SUBDIR += opentsdb
@@ -611,7 +606,6 @@
     SUBDIR += pgtop
     SUBDIR += pgtune
     SUBDIR += pguri
-    SUBDIR += pgworksheet
     SUBDIR += php-tarantool
     SUBDIR += php-xapian
     SUBDIR += php72-dba
@@ -749,13 +743,12 @@
     SUBDIR += pxtools
     SUBDIR += py-Elixir
     SUBDIR += py-MySQLdb
-    SUBDIR += py-MySQLdb55
-    SUBDIR += py-MySQLdb56
     SUBDIR += py-PyGreSQL
     SUBDIR += py-Pyrseas
     SUBDIR += py-agate-sql
     SUBDIR += py-aiopg
     SUBDIR += py-aioredis
+    SUBDIR += py-aiosqlite
     SUBDIR += py-alembic
     SUBDIR += py-apsw
     SUBDIR += py-asyncpg
@@ -763,9 +756,7 @@
     SUBDIR += py-bsddb3
     SUBDIR += py-carbon
     SUBDIR += py-cassandra-driver
-    SUBDIR += py-cdb
     SUBDIR += py-couchdb
-    SUBDIR += py-cql
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
     SUBDIR += py-django-transaction-hooks
@@ -773,7 +764,6 @@
     SUBDIR += py-fdb
     SUBDIR += py-firebirdsql
     SUBDIR += py-flask-sqlalchemy
-    SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
     SUBDIR += py-geoalchemy
     SUBDIR += py-geoalchemy2
@@ -793,8 +783,8 @@
     SUBDIR += py-mysql-connector-python
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-mysqlclient
-    SUBDIR += py-oops
     SUBDIR += py-oursql
+    SUBDIR += py-partd
     SUBDIR += py-peewee
     SUBDIR += py-peewee_migrate
     SUBDIR += py-pg8000
@@ -814,6 +804,7 @@
     SUBDIR += py-psycopg2cffi
     SUBDIR += py-pum
     SUBDIR += py-pyPgSQL
+    SUBDIR += py-pycql
     SUBDIR += py-pyhs
     SUBDIR += py-pylibmc
     SUBDIR += py-pymssql
@@ -833,7 +824,6 @@
     SUBDIR += py-redis
     SUBDIR += py-redis2
     SUBDIR += py-riak
-    SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-sispy
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy-migrate
@@ -898,6 +888,7 @@
     SUBDIR += rubygem-activemodel5
     SUBDIR += rubygem-activemodel50
     SUBDIR += rubygem-activemodel52
+    SUBDIR += rubygem-activemodel60
     SUBDIR += rubygem-activerecord-explain-analyze
     SUBDIR += rubygem-activerecord-import
     SUBDIR += rubygem-activerecord-jdbc-adapter
@@ -907,6 +898,7 @@
     SUBDIR += rubygem-activerecord5
     SUBDIR += rubygem-activerecord50
     SUBDIR += rubygem-activerecord52
+    SUBDIR += rubygem-activerecord60
     SUBDIR += rubygem-after_commit_queue
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
@@ -954,6 +946,7 @@
     SUBDIR += rubygem-globalid-rails5
     SUBDIR += rubygem-globalid-rails50
     SUBDIR += rubygem-globalid-rails52
+    SUBDIR += rubygem-globalid-rails60
     SUBDIR += rubygem-her
     SUBDIR += rubygem-hiredis
     SUBDIR += rubygem-influxdb
@@ -970,7 +963,6 @@
     SUBDIR += rubygem-paranoia
     SUBDIR += rubygem-peek-mysql2-rails5
     SUBDIR += rubygem-peek-pg-rails5
-    SUBDIR += rubygem-peek-pg-rails52
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-pg0
     SUBDIR += rubygem-pg018
@@ -987,6 +979,7 @@
     SUBDIR += rubygem-redis-actionpack-rails5
     SUBDIR += rubygem-redis-actionpack-rails50
     SUBDIR += rubygem-redis-actionpack-rails52
+    SUBDIR += rubygem-redis-actionpack-rails60
     SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-seed-fu
     SUBDIR += rubygem-sqlite3
@@ -1029,7 +1022,6 @@
     SUBDIR += tcl-lmdb
     SUBDIR += tcl-sqlite3
     SUBDIR += tdb
-    SUBDIR += tdb1
     SUBDIR += tdbc
     SUBDIR += tile38
     SUBDIR += tiledb
@@ -1056,6 +1048,5 @@
     SUBDIR += xrootd
     SUBDIR += xtrabackup
     SUBDIR += zabbix3-libzbxpgsql
-    SUBDIR += zodb3
 
 .include <bsd.port.subdir.mk>

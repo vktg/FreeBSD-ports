@@ -3,7 +3,11 @@
 PORTNAME=	cage
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.1
+<<<<<<< HEAD
 PORTREVISION=	7
+=======
+PORTREVISION=	8
+>>>>>>> upstream/master
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	2020.0
+PORTVERSION=	2020.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -16,8 +17,7 @@ ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 USES=	compiler gmake tar:tgz
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	01org
-GH_TAGNAME=	v${PORTVERSION}
+GH_ACCOUNT=	intel
 
 SUB_FILES=	tbb.pc
 SUB_LIST=	prefix="${PREFIX}" \

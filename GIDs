@@ -7,7 +7,7 @@ operator:*:5:amanda
 mail:*:6:postfix,clamav
 ftp:*:14:
 smmsp:*:25:
-video:*:44:
+video:*:44:lightdm
 bind:*:53:
 rdfdb:*:55:
 spamd:*:58:
@@ -186,7 +186,7 @@ prosody:*:242:
 ot-recorder:*:243:
 mastodon:*:244:
 routinator:*:245:
-# free: 246
+fahclient:*:246:fahclient
 fcron:*:247:
 # free: 248
 # free: 249
@@ -194,7 +194,7 @@ sems:*:250:
 # free: 251
 # free: 252
 _adsuck:*:253:
-# free: 254
+imds:*:254:
 _i2pd:*:255:
 _tor:*:256:
 _smtpd:*:257:
@@ -274,7 +274,7 @@ orthanc:*:330:
 # free: 331
 # free: 332
 # free: 333
-# free: 334
+honeytrap:*:333:
 # free: 335
 # free: 336
 daapd:*:337:
@@ -812,8 +812,8 @@ ebusd:*:854:
 # free: 869
 # free: 870
 # free: 871
-# free: 872
-# free: 873
+bitmark:*:872:
+bitmark-recorder:*:873:
 # free: 874
 # free: 875
 # free: 876

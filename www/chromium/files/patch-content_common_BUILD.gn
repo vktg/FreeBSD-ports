@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 --- content/common/BUILD.gn.orig	2019-12-16 21:51:26 UTC
 +++ content/common/BUILD.gn
 @@ -366,6 +366,12 @@ source_set("common") {
+=======
+--- content/common/BUILD.gn.orig	2020-03-03 18:53:54 UTC
++++ content/common/BUILD.gn
+@@ -363,6 +363,12 @@ source_set("common") {
+>>>>>>> upstream/master
      libs += [ "android" ]
    }
  

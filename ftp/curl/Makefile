@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.67.0
+PORTVERSION=	7.68.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -140,7 +140,6 @@ THREADED_RESOLVER_CONFIGURE_ENABLE=	pthreads threaded-resolver
 TLS_SRP_CONFIGURE_ENABLE=	tls-srp
 WOLFSSL_CONFIGURE_WITH=	wolfssl
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
-WOLFSSL_BROKEN=		does not build
 
 .include <bsd.port.pre.mk>
 

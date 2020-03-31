@@ -3,11 +3,15 @@
 
 PORTNAME=	firefox
 DISTVERSION=	74.0
+<<<<<<< HEAD
 PORTREVISION=	1
+=======
+PORTREVISION=	5
+>>>>>>> upstream/master
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build3/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -21,7 +25,10 @@ BUILD_DEPENDS=	nspr>=4.25:devel/nspr \
 		graphite2>=1.3.13:graphics/graphite2 \
 		png>=1.6.35:graphics/png \
 		libvpx>=1.5.0:multimedia/libvpx \
+<<<<<<< HEAD
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+=======
+>>>>>>> upstream/master
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		nasm:devel/nasm \

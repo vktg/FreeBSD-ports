@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 --- ui/base/ui_base_features.cc.orig	2019-12-16 21:51:33 UTC
 +++ ui/base/ui_base_features.cc
 @@ -117,7 +117,7 @@ const base::Feature kEnableAutomaticUiAdjustmentsForTo
+=======
+--- ui/base/ui_base_features.cc.orig	2020-03-03 18:54:06 UTC
++++ ui/base/ui_base_features.cc
+@@ -122,7 +122,7 @@ const base::Feature kEnableAutomaticUiAdjustmentsForTo
+>>>>>>> upstream/master
      "EnableAutomaticUiAdjustmentsForTouch", base::FEATURE_ENABLED_BY_DEFAULT};
  #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
  
@@ -9,7 +15,11 @@
  // Enables stylus appearing as touch when in contact with digitizer.
  const base::Feature kDirectManipulationStylus = {
      "DirectManipulationStylus",
+<<<<<<< HEAD
 @@ -127,7 +127,7 @@ const base::Feature kDirectManipulationStylus = {
+=======
+@@ -132,7 +132,7 @@ const base::Feature kDirectManipulationStylus = {
+>>>>>>> upstream/master
      base::FEATURE_DISABLED_BY_DEFAULT
  #endif
  };

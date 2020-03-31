@@ -2,7 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	sudo
+<<<<<<< HEAD
 PORTVERSION=	1.8.31
+=======
+PORTVERSION=	1.8.31p1
+>>>>>>> upstream/master
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 

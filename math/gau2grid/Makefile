@@ -2,7 +2,11 @@
 
 PORTNAME=	gau2grid
 DISTVERSIONPREFIX=	v
+<<<<<<< HEAD
 DISTVERSION=	2.0.1
+=======
+DISTVERSION=	2.0.4
+>>>>>>> upstream/master
 PORTREVISION=	1
 CATEGORIES=	math python
 

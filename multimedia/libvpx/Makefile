@@ -4,6 +4,7 @@
 PORTNAME=	libvpx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,12 +27,18 @@ SHEBANG_FILES=	build/make/ads2gas.pl
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-install-docs \
 		--disable-install-srcs \
+		--disable-unit-tests \
+		--enable-multi-res-encoding \
 		--enable-pic \
-		--enable-vp8 \
-		--enable-vp9
+		--enable-shared \
+		--enable-vp9-highbitdepth \
+		--enable-vp9-postproc \
+		--enable-vp9-temporal-denoising \
+		--size-limit=16384x16384
 MAKE_ARGS+=	verbose=yes
 ALL_TARGET=	# empty
 
+<<<<<<< HEAD
 OPTIONS_DEFINE=	DEBUG MULTIRES POSTPROC RTCPU SHARED SIZE_LIMIT TEST THREADS
 OPTIONS_DEFAULT=MULTIRES POSTPROC RTCPU SHARED SIZE_LIMIT THREADS
 OPTIONS_EXCLUDE_powerpcspe=RTCPU
@@ -61,6 +68,8 @@ TEST_CONFIGURE_OFF=	--disable-unit-tests
 
 THREADS_CONFIGURE_OFF=	--disable-multithread
 
+=======
+>>>>>>> upstream/master
 post-patch:
 	@${REINPLACE_CMD} -E '/gcctarget|link_with_cc/s/gcc[[:>:]]/$${CC}/' \
 		${WRKSRC}/build/make/configure.sh
@@ -70,8 +79,6 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vpx*
-
-post-install-SHARED-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvpx.so.*.*.*
 
 .include <bsd.port.mk>

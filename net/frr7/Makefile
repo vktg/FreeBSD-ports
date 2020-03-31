@@ -1,8 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	frr
+<<<<<<< HEAD
 PORTVERSION=	7.2
 PORTREVISION=	1
+=======
+PORTVERSION=	7.3
+>>>>>>> upstream/master
 DISTVERSIONPREFIX=	frr-
 CATEGORIES=	net
 PKGNAMESUFFIX=	7
