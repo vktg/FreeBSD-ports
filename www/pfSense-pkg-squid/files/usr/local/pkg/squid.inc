@@ -804,9 +804,6 @@ function squid_validate_general($post, &$input_errors) {
 	unset($port, $webgui_port);
 
 	if ($post['transparent_proxy'] == 'on') {
-		if ($post['listenproto'] == 'inet6') {
-			$input_errors[] = "Transparent Proxy does not support IPv6.";
-		}
 		if (empty($post['transparent_active_interface'])) {
 			$input_errors[] = "You must select at least one interface under 'Transparent Proxy Interface(s)' when 'Transparent HTTP Proxy' is enabled.";
 		} else {
@@ -1310,12 +1307,29 @@ function squid_resync_general() {
 		}
 	}
 
-	if (($settings['transparent_proxy'] == 'on') && ($listenproto != 'inet6')) {
-		if ($settings['ssl_proxy'] == "on" && count($ssl_ifaces) > 0) {
-			$conf .= "http_port 127.0.0.1:{$port} intercept {$ssl_interception}\n";
-			$conf .= "https_port 127.0.0.1:{$ssl_port} intercept {$ssl_interception}\n";
-		} else {
-			$conf .= "http_port 127.0.0.1:{$port} intercept\n";
+	if ($settings['transparent_proxy'] == 'on') {
+		if ($listenproto != 'inet6') {
+			if ($settings['ssl_proxy'] == "on" && count($ssl_ifaces) > 0) {
+				$conf .= "http_port 127.0.0.1:{$port} intercept {$ssl_interception}\n";
+				$conf .= "https_port 127.0.0.1:{$ssl_port} intercept {$ssl_interception}\n";
+			} else {
+				$conf .= "http_port 127.0.0.1:{$port} intercept\n";
+			}
+		}
+		if ($listenproto != 'inet') {
+			foreach ($transparent_ifaces as $t_iface) {
+				$t_ifaces_ips = squid_get_real_interface_address($t_iface, $listenproto);
+				foreach ($t_ifaces_ips as $t_iface_ip) {
+					if (is_ipaddrv6($t_iface_ip[0])) {
+						if ($settings['ssl_proxy'] == "on" && count($ssl_ifaces) > 0) {
+							$conf .= "http_port [{$t_iface_ip[0]}]:{$port} intercept {$ssl_interception}\n";
+							$conf .= "https_port [{$t_iface_ip[0]}]:{$ssl_port} intercept {$ssl_interception}\n";
+						} else {
+							$conf .= "http_port [{$t_iface_ip[0]}]:{$port} intercept\n";
+						}
+					}
+				}
+			}
 		}
 	}
 	$icp_port = ($settings['icp_port'] ? $settings['icp_port'] : 0);
@@ -2202,6 +2216,12 @@ function squid_generate_rules($type) {
 	// Define NAT ports - 80 and 443 if SSL filtering is enabled
 	$pf_nat_ports = ($squid_conf['ssl_proxy'] == "on" ? "{80,443}" : "80");
 
+	if (empty($squid_conf['listenproto'])) {
+		$listenproto = 'inet';
+	} else {
+		$listenproto = $squid_conf['listenproto'];
+	}
+
 	/*
 	 * When transparent proxy is enabled and we are doing NAT, use rdr pass to pass traffic
 	 * For PPPoE server, the $pppoe below is a pf macro, not a PHP variable, needs to be escaped.
@@ -2213,14 +2233,21 @@ function squid_generate_rules($type) {
 				break;
 			}
 			$rules .= "\n# Setup Squid proxy redirect\n";
-			/* Bypass Proxy for Private Address Destination - RFC1918 */
+			/* Bypass Proxy for Private Address Destination */
 			if ($squid_conf['private_subnet_proxy_off'] == 'on') {
 				foreach ($transparent_ifaces as $iface) {
 					$pf_transparent_rule_port = (in_array($iface, $ssl_ifaces) ? "{80,443}" : "80");
-					$rules .= "no rdr on $iface proto tcp from any to { 192.168.0.0/16, 172.16.0.0/12, 10.0.0.0/8 } port {$pf_transparent_rule_port}\n";
+					if ($listenproto != 'inet6') {
+						$rules .= "no rdr on $iface proto tcp from any to { 192.168.0.0/16, 172.16.0.0/12, 10.0.0.0/8 } port {$pf_transparent_rule_port}\n";
+					}
+					if ($listenproto != 'inet') {
+						$rules .= "no rdr on $iface proto tcp from any to { fc00::/7 } port {$pf_transparent_rule_port}\n";
+					}
 				}
 				/* Handle PPPOE case */
-				if (($config['pppoe']['mode'] == "server" && $config['pppoe']['localip']) || (function_exists("is_pppoe_server_enabled") && is_pppoe_server_enabled())) {
+				if ((($config['pppoe']['mode'] == "server" && $config['pppoe']['localip']) ||
+				    (function_exists("is_pppoe_server_enabled") && is_pppoe_server_enabled())) &&
+				    ($listenproto != 'inet6')) {
 					$rules .= "no rdr on \$pppoe proto tcp from any to { 192.168.0.0/16, 172.16.0.0/12, 10.0.0.0/8 } port {$pf_nat_ports}\n";
 				}
 			}
@@ -2243,7 +2270,9 @@ function squid_generate_rules($type) {
 					$rules .= "no rdr on $iface proto tcp from { $exempt_ip } to any port {$pf_transparent_rule_port}\n";
 				}
 				/* Handle PPPOE case */
-				if (($config['pppoe']['mode'] == "server" && $config['pppoe']['localip']) || (function_exists("is_pppoe_server_enabled") && is_pppoe_server_enabled())) {
+				if ((($config['pppoe']['mode'] == "server" && $config['pppoe']['localip']) ||
+				    (function_exists("is_pppoe_server_enabled") && is_pppoe_server_enabled())) &&
+				    ($listenproto != 'inet6')) {
 					$rules .= "no rdr on \$pppoe proto tcp from { $exempt_ip } to any port {$pf_nat_ports}\n";
 				}
 			}
@@ -2266,15 +2295,32 @@ function squid_generate_rules($type) {
 					$rules .= "no rdr on $iface proto tcp from any to { $exempt_dest } port {$pf_transparent_rule_port}\n";
 				}
 				/* Handle PPPOE case */
-				if (($config['pppoe']['mode'] == "server" && $config['pppoe']['localip']) || (function_exists("is_pppoe_server_enabled") && is_pppoe_server_enabled())) {
+				if ((($config['pppoe']['mode'] == "server" && $config['pppoe']['localip']) ||
+				    (function_exists("is_pppoe_server_enabled") && is_pppoe_server_enabled())) &&
+				    ($listenproto != 'inet6')) {
 					$rules .= "no rdr on \$pppoe proto tcp from any to { $exempt_dest } port {$pf_nat_ports}\n";
 				}
 			}
 			/* Transparent Proxy Interface(s) */
 			foreach ($transparent_ifaces as $t_iface) {
-				$rules .= "rdr pass on $t_iface proto tcp from any to !($t_iface) port 80 -> 127.0.0.1 port {$port}\n";
-				if (in_array($t_iface, $ssl_ifaces)) {
-					$rules .= "rdr pass on $t_iface proto tcp from any to !($t_iface) port 443 -> 127.0.0.1 port {$ssl_port}\n";
+				$t_ifaces_ips = squid_get_real_interface_address($t_iface, $listenproto);
+				foreach ($t_ifaces_ips as $t_iface_ip) {
+					if (is_ipaddrv4($t_iface_ip[0]) && ($listenproto != 'inet6')) {
+						$rules .= "rdr pass on $t_iface inet proto tcp from any to !($t_iface) " .
+						"port 80 -> 127.0.0.1 port {$port}\n";
+						if (in_array($t_iface, $ssl_ifaces)) {
+							$rules .= "rdr pass on $t_iface inet proto tcp from any to !($t_iface) " .
+							"port 443 -> 127.0.0.1 port {$ssl_port}\n";
+						}
+					}
+					if (is_ipaddrv6($t_iface_ip[0]) && ($listenproto != 'inet')) {
+						$rules .= "rdr pass on $t_iface inet6 proto tcp from any to !($t_iface) " .
+						"port 80 -> {$t_iface_ip[0]} port {$port}\n";
+						if (in_array($t_iface, $ssl_ifaces)) {
+							$rules .= "rdr pass on $t_iface inet6 proto tcp from any to !($t_iface) " .
+							"port 443 -> {$t_iface_ip[0]} port {$ssl_port}\n";
+						}
+					}
 				}
 			}
 			/*
@@ -2282,7 +2328,9 @@ function squid_generate_rules($type) {
 			 * For PPPoE server, mpd uses a group of different _local_ interfaces
 			 * The rules below are needed so that the clients can be transparently proxied
 			 */
-			if (($config['pppoe']['mode'] == "server" && $config['pppoe']['localip']) || (function_exists("is_pppoe_server_enabled") && is_pppoe_server_enabled())) {
+			if ((($config['pppoe']['mode'] == "server" && $config['pppoe']['localip']) ||
+			    (function_exists("is_pppoe_server_enabled") && is_pppoe_server_enabled())) &&
+			    ($listenproto != 'inet6')) {
 				$rules .= "rdr pass on \$pppoe proto tcp from any to !127.0.0.1 port 80 -> 127.0.0.1 port {$port}\n";
 				if ($squid_conf['ssl_proxy'] == "on") {
 					$rules .= "rdr pass on \$pppoe proto tcp from any to !127.0.0.1 port 443 -> 127.0.0.1 port {$ssl_port}\n";
